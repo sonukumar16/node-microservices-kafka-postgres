@@ -1,0 +1,75 @@
+USER-SERVICE
+
+1. Create User
+    curl --location 'localhost:3000/user' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "firstName": "sonu",
+        "lastName": "Kumar",
+        "email": "sonukumar3411@gmail.com"
+    }'
+
+2. Get User
+    curl --location 'localhost:3000/user/b0364d39-fd71-4d36-af25-ce37fb668ad1'
+
+3. Updtae User
+    curl --location --request PUT 'localhost:3000/user/b0364d39-fd71-4d36-af25-ce37fb668ad1' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "firstName": "sonukk111"
+    }'
+
+4. Delete User
+    curl --location --request DELETE 'localhost:3000/user/b0364d39-fd71-4d36-af25-ce37fb668ad1'
+
+
+PRODUCT SERVICE
+
+    
+1. Create Product
+   curl --location 'localhost:3001/product' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "item": "iphone1",
+        "price": "1000",
+        "description" :"this is new iphone"
+    }'
+
+2. Get Product
+    curl --location 'localhost:3001/product/9be4a200-f480-4a1b-a046-01b550e6814e'
+
+3. Updtae Product
+    curl --location --request PUT 'localhost:3001/product/9be4a200-f480-4a1b-a046-01b550e6814e' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "price": "10"
+    }'
+
+4. Delete Product
+    curl --location --request DELETE 'localhost:3001/product/9be4a200-f480-4a1b-a046-01b550e6814e'
+
+
+ORDER SERVICE
+
+    
+1. Create Order
+   curl --location 'localhost:3002/order' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "item": "iphone",
+        "price" : "1000",
+        "userId": "101da6e8-b9e2-4026-af64-6eefe5f557e5"
+    }'
+
+2. Get Order
+    curl --location 'localhost:3002/order/bcfe7c61-512c-466b-b300-0b8aaa7f867c'
+
+3. Updtae Order
+    curl --location --request PUT 'localhost:3002/order/bcfe7c61-512c-466b-b300-0b8aaa7f867c' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "price" : "100000"
+    }'
+
+4. Delete Order
+    curl --location --request DELETE 'localhost:3002/order/bcfe7c61-512c-466b-b300-0b8aaa7f867c'
